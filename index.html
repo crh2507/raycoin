@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title>RAYCOIN Wallet</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <style>
+   body { font-family: sans-serif; padding: 20px; background: #111; color: #0f0; }
+   input, button, textarea { margin: 5px 0; width: 100%; font-size: 1rem; }
+   .section { border: 1px solid #0f0; padding: 10px; margin: 10px 0; }
+   h2 { border-bottom: 1px solid #0f0; }
+ </style>
+</head>
+<body>
+
+ <h1>💰 RAYCOIN Wallet</h1>
+
+ <div class="section">
+   <h2>Your Wallet</h2>
+   <p><strong>Address:</strong></p>
+   <textarea id="address" readonly></textarea>
+   <p><strong>Private Key:</strong></p>
+   <textarea id="privKey" readonly></textarea>
+   <button onclick="createWallet()">🔐 Generate New Wallet</button>
+ </div>
+
+ <div class="section">
+   <h2>Balance</h2>
+   <p id="balance">Loading...</p>
+ </div>
+
+ <div class="section">
+   <h2>Send RAYCOIN</h2>
+   <input type="text" id="to" placeholder="Recipient address">
+   <input type="number" id="amount" placeholder="Amount to send">
+   <button onclick="sendTx()">🚀 Send</button>
+ </div>
+
+ <div class="section">
+   <h2>Mine Block</h2>
+   <button onclick="mineBlock()">⛏️ Mine</button>
+   <p id="mineStatus"></p>
+ </div>
+
+ <div class="section">
+   <h2>Blockchain</h2>
+   <pre id="chainView"></pre>
+ </div>
+
+ <script src="wallet.js"></script>
+ <script src="blockchain.js"></script>
+ <script src="storage.js"></script>
+ <script src="ui.js"></script>
+</body>
+</html>
